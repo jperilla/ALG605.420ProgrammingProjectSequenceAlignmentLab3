@@ -1,0 +1,86 @@
+Julie Garcia Longest Common Subsequence Lab #3
+
+
+Compare S1 = ACCGGTCGACTGCGCGGAAGCCGGCCGAA and S2 = GTCGTTCGGAATGCCGTTGCTCTGTAAA
+LCS = GTCGTCGGAAGCCGGCCGAA
+LCS length = 20
+Percent Match String 1 = 68.965517 Percent
+Percent Match String 2 = 71.428571 Percent
+Dynamic Running time: 00:00:00.000
+
+Compare S1 = ACCGGTCGACTGCGCGGAAGCCGGCCGAA and S3 = ATTGCATTGCATGGGCGCGATGCATTTGGTTAATTCCTCG
+LCS = ATGCTGCGCGGAGCGGCCG
+LCS length = 19
+Percent Match String 1 = 65.517241 Percent
+Percent Match String 2 = 47.500000 Percent
+Dynamic Running time: 00:00:00.000
+
+Compare S1 = ACCGGTCGACTGCGCGGAAGCCGGCCGAA and S4 = CTTGCTTAAATGTGCA
+LCS = CTTGCAAGGCA
+LCS length = 11
+Percent Match String 1 = 37.931034 Percent
+Percent Match String 2 = 68.750000 Percent
+Dynamic Running time: 00:00:00.000
+
+Compare S2 = GTCGTTCGGAATGCCGTTGCTCTGTAAA and S1 = ACCGGTCGACTGCGCGGAAGCCGGCCGAA
+LCS = GTCGTCGGAAGCCGGCCGAA
+LCS length = 20
+Percent Match String 1 = 71.428571 Percent
+Percent Match String 2 = 68.965517 Percent
+Dynamic Running time: 00:00:00.000
+
+Compare S2 = GTCGTTCGGAATGCCGTTGCTCTGTAAA and S3 = ATTGCATTGCATGGGCGCGATGCATTTGGTTAATTCCTCG
+LCS = TGTTGATGCCGTGCTTGTAA
+LCS length = 20
+Percent Match String 1 = 71.428571 Percent
+Percent Match String 2 = 50.000000 Percent
+Dynamic Running time: 00:00:00.000
+
+Compare S2 = GTCGTTCGGAATGCCGTTGCTCTGTAAA and S4 = CTTGCTTAAATGTGCA
+LCS = CTTGAATGTGCA
+LCS length = 12
+Percent Match String 1 = 42.857143 Percent
+Percent Match String 2 = 75.000000 Percent
+Dynamic Running time: 00:00:00.000
+
+Compare S3 = ATTGCATTGCATGGGCGCGATGCATTTGGTTAATTCCTCG and S1 = ACCGGTCGACTGCGCGGAAGCCGGCCGAA
+LCS = ACCGGCGATGCGGAACCCG
+LCS length = 19
+Percent Match String 1 = 47.500000 Percent
+Percent Match String 2 = 65.517241 Percent
+Dynamic Running time: 00:00:00.000
+
+Compare S3 = ATTGCATTGCATGGGCGCGATGCATTTGGTTAATTCCTCG and S2 = GTCGTTCGGAATGCCGTTGCTCTGTAAA
+LCS = GCTTCGGGCCGTGCTTGTAA
+LCS length = 20
+Percent Match String 1 = 50.000000 Percent
+Percent Match String 2 = 71.428571 Percent
+Dynamic Running time: 00:00:00.000
+
+Compare S3 = ATTGCATTGCATGGGCGCGATGCATTTGGTTAATTCCTCG and S4 = CTTGCTTAAATGTGCA
+LCS = CTTGCTTAAATTG
+LCS length = 13
+Percent Match String 1 = 32.500000 Percent
+Percent Match String 2 = 81.250000 Percent
+Dynamic Running time: 00:00:00.000
+
+Compare S4 = CTTGCTTAAATGTGCA and S1 = ACCGGTCGACTGCGCGGAAGCCGGCCGAA
+LCS = CTGCTAAGGCA
+LCS length = 11
+Percent Match String 1 = 68.750000 Percent
+Percent Match String 2 = 37.931034 Percent
+Dynamic Running time: 00:00:00.000
+
+Compare S4 = CTTGCTTAAATGTGCA and S2 = GTCGTTCGGAATGCCGTTGCTCTGTAAA
+LCS = GCTTAATGTGCA
+LCS length = 12
+Percent Match String 1 = 75.000000 Percent
+Percent Match String 2 = 42.857143 Percent
+Dynamic Running time: 00:00:00.000
+
+Compare S4 = CTTGCTTAAATGTGCA and S3 = ATTGCATTGCATGGGCGCGATGCATTTGGTTAATTCCTCG
+LCS = TTGCTTATGTGCA
+LCS length = 13
+Percent Match String 1 = 81.250000 Percent
+Percent Match String 2 = 32.500000 Percent
+Dynamic Running time: 00:00:00.000
