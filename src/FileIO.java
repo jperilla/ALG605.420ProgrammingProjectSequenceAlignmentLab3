@@ -5,7 +5,7 @@
  * 
  * ALG 605.420.81.FA16
  * 
- * Programming Project #2 - Hashing Lab
+ * Programming Project #3 - Longest Common Subsequence Lab, Code reused from Lab #2
  * 
  */
 
