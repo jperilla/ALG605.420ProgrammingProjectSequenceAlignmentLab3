@@ -4,6 +4,10 @@ Julie Garcia Longest Common Subsequence Lab #3
 Compare S1 = ACCGGTCGACTGCGCGGAAGCCGGCCGAA
 to S2 = GTCGTTCGGAATGCCGTTGCTCTGTAAA
 
+LCS Length = 20
+Naive String Compare Running time: 00:02:37.826
+
+
 LCS length = 20
 Percent Match String 1 = 68.965517 Percent
 Percent Match String 2 = 71.428571 Percent
@@ -15,20 +19,28 @@ Dynamic String Construct Running time: 00:00:00.000
 ----------------------------------------------------
 
 Compare S1 = ACCGGTCGACTGCGCGGAAGCCGGCCGAA
-to S3 = ATTGCATTGCATGGGCGCGATGCATTTGGTTAATTCCTCG
+to S3 = ATTGCATTGCATGGGCGCGATGCATTTGGTTAA
 
-LCS length = 19
-Percent Match String 1 = 65.517241 Percent
-Percent Match String 2 = 47.500000 Percent
+LCS Length = 18
+Naive String Compare Running time: 00:12:24.274
+
+
+LCS length = 18
+Percent Match String 1 = 62.068966 Percent
+Percent Match String 2 = 54.545455 Percent
 Dynamic Compare Running time: 00:00:00.000
 
-LCS = ATGCTGCGCGGAGCGGCCG
+LCS = ATTGCGCGGGCCGGCGAA
 Dynamic String Construct Running time: 00:00:00.000
 
 ----------------------------------------------------
 
 Compare S1 = ACCGGTCGACTGCGCGGAAGCCGGCCGAA
 to S4 = CTTGCTTAAATGTGCA
+
+LCS Length = 11
+Naive String Compare Running time: 00:00:00.318
+
 
 LCS length = 11
 Percent Match String 1 = 37.931034 Percent
@@ -41,11 +53,15 @@ Dynamic String Construct Running time: 00:00:00.000
 ----------------------------------------------------
 
 Compare S2 = GTCGTTCGGAATGCCGTTGCTCTGTAAA
-to S3 = ATTGCATTGCATGGGCGCGATGCATTTGGTTAATTCCTCG
+to S3 = ATTGCATTGCATGGGCGCGATGCATTTGGTTAA
+
+LCS Length = 20
+Naive String Compare Running time: 00:01:04.198
+
 
 LCS length = 20
 Percent Match String 1 = 71.428571 Percent
-Percent Match String 2 = 50.000000 Percent
+Percent Match String 2 = 60.606061 Percent
 Dynamic Compare Running time: 00:00:00.000
 
 LCS = TGTTGATGCCGTGCTTGTAA
@@ -55,6 +71,10 @@ Dynamic String Construct Running time: 00:00:00.000
 
 Compare S2 = GTCGTTCGGAATGCCGTTGCTCTGTAAA
 to S4 = CTTGCTTAAATGTGCA
+
+LCS Length = 12
+Naive String Compare Running time: 00:00:00.116
+
 
 LCS length = 12
 Percent Match String 1 = 42.857143 Percent
@@ -66,15 +86,19 @@ Dynamic String Construct Running time: 00:00:00.000
 
 ----------------------------------------------------
 
-Compare S3 = ATTGCATTGCATGGGCGCGATGCATTTGGTTAATTCCTCG
+Compare S3 = ATTGCATTGCATGGGCGCGATGCATTTGGTTAA
 to S4 = CTTGCTTAAATGTGCA
 
+LCS Length = 13
+Naive String Compare Running time: 00:00:00.151
+
+
 LCS length = 13
-Percent Match String 1 = 32.500000 Percent
+Percent Match String 1 = 39.393939 Percent
 Percent Match String 2 = 81.250000 Percent
 Dynamic Compare Running time: 00:00:00.000
 
-LCS = CTTGCTTAAATTG
+LCS = TTGCTTAAATGTA
 Dynamic String Construct Running time: 00:00:00.000
 
 ----------------------------------------------------
