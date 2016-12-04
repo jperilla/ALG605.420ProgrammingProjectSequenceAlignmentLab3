@@ -5,7 +5,7 @@ Compare S1 = ACCGGTCGACTGCGCGGAAGCCGGCCGAA
 to S2 = GTCGTTCGGAATGCCGTTGCTCTGTAAA
 
 LCS Length = 20
-Naive String Compare Running time: 00:02:37.826
+Naive String Compare Running time: 00:02:34.253
 
 
 LCS length = 20
@@ -22,7 +22,7 @@ Compare S1 = ACCGGTCGACTGCGCGGAAGCCGGCCGAA
 to S3 = ATTGCATTGCATGGGCGCGATGCATTTGGTTAA
 
 LCS Length = 18
-Naive String Compare Running time: 00:12:24.274
+Naive String Compare Running time: 00:12:27.493
 
 
 LCS length = 18
@@ -39,7 +39,7 @@ Compare S1 = ACCGGTCGACTGCGCGGAAGCCGGCCGAA
 to S4 = CTTGCTTAAATGTGCA
 
 LCS Length = 11
-Naive String Compare Running time: 00:00:00.318
+Naive String Compare Running time: 00:00:00.328
 
 
 LCS length = 11
@@ -56,7 +56,7 @@ Compare S2 = GTCGTTCGGAATGCCGTTGCTCTGTAAA
 to S3 = ATTGCATTGCATGGGCGCGATGCATTTGGTTAA
 
 LCS Length = 20
-Naive String Compare Running time: 00:01:04.198
+Naive String Compare Running time: 00:01:03.889
 
 
 LCS length = 20
@@ -73,7 +73,7 @@ Compare S2 = GTCGTTCGGAATGCCGTTGCTCTGTAAA
 to S4 = CTTGCTTAAATGTGCA
 
 LCS Length = 12
-Naive String Compare Running time: 00:00:00.116
+Naive String Compare Running time: 00:00:00.110
 
 
 LCS length = 12
@@ -90,7 +90,7 @@ Compare S3 = ATTGCATTGCATGGGCGCGATGCATTTGGTTAA
 to S4 = CTTGCTTAAATGTGCA
 
 LCS Length = 13
-Naive String Compare Running time: 00:00:00.151
+Naive String Compare Running time: 00:00:00.141
 
 
 LCS length = 13

@@ -65,7 +65,7 @@ public class LongestCommonSubsequence {
 	 * can also be sent to FindLCSStringDynamic in order
 	 * to find the actual common string of the LCS
 	 */
-	public int[][] ConstructLCSTableDynamic() {
+	public int[][] FindLCSLengthDynamic() {
 		
 		int m = firstStr.length;
 		int n = secondStr.length;
@@ -90,7 +90,7 @@ public class LongestCommonSubsequence {
 	
 	/***
 	 * This function uses a dynamic programming approach
-	 * and take a table constructed from ConstructLCSTableDynamic
+	 * and take a table constructed from FindLCSStringDynamic
 	 * to trace the path of the LCS String backwards.
 	 * 
 	 * @param LCSTable The table used to retrace the path of 
@@ -120,7 +120,11 @@ public class LongestCommonSubsequence {
 	
 	/***
 	 * This function finds the lenght of the Longest Common
-	 * Subsequence between the two strings.
+	 * Subsequence between the two strings. This function is not
+	 * recommended for strings over length 20 and was implemented
+	 * to demonstrate speed gains when using dynamic programming. 
+	 * For a faster solution, use FindLCSLengthDynamic and
+	 * FindLCSStringDynamic.
 	 * 
 	 * @return The length of the longest common subsequence of firstStr and secondStr
 	 */

@@ -5,7 +5,7 @@ Compare S1 = ACCGGTCGACTG
 to S2 = GTCGTTCGGCAA
 
 LCS Length = 6
-Naive String Compare Running time: 00:00:00.000
+Naive String Compare Running time: 00:00:00.002
 
 
 LCS length = 6
@@ -39,7 +39,7 @@ Compare S1 = ACCGGTCGACTG
 to S4 = CTTGCTTAAATGTGCA
 
 LCS Length = 6
-Naive String Compare Running time: 00:00:00.001
+Naive String Compare Running time: 00:00:00.002
 
 
 LCS length = 6

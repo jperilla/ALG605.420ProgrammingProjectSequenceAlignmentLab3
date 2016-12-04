@@ -76,14 +76,16 @@ public class LongestCommonSubsequenceTests {
 	        String inputFileName = args[0];
 	        BufferedReader br = FileIO.readInputFile(inputFileName);
 	        
-	        // If option -n run naive and dynamic solution, default runs dynaic only
+	        // If option -n run naive and dynamic solution, default runs 
+	        // dynamic only
 	        boolean runNaive = false;
 	        if(args.length > 1 && args[1].equalsIgnoreCase("-n")) {
 	        	runNaive = true;
 	        }
 	
 	        // Setup output file
-	        File outputFile = FileIO.setupOutputFile(inputFileName, "Julie Garcia Longest Common Subsequence Lab #3");
+	        File outputFile = FileIO.setupOutputFile(inputFileName, 
+	        					"Julie Garcia Longest Common Subsequence Lab #3");
 	        
 	        // The main work is done in here
 	        processInput(br, outputFile, runNaive);
@@ -112,7 +114,8 @@ public class LongestCommonSubsequenceTests {
 	 * @param runNaive Run naive solution (true), or not (false)
 	 * @throws IOException
 	 */
-	private static void processInput(BufferedReader br, File outputFile, boolean runNaive) throws IOException {
+	private static void processInput(BufferedReader br, File outputFile, 
+										boolean runNaive) throws IOException {
 		
 		String strLine;
 		ArrayList<String> arrayOfStrings = new ArrayList<String>();
@@ -121,7 +124,8 @@ public class LongestCommonSubsequenceTests {
     	// Read strings into an array
 		while ((strLine = br.readLine()) != null) {
 			if(strLine != null && !strLine.isEmpty()) {
-				String strToAdd = strLine.substring(strLine.indexOf('=') + 1, strLine.length());
+				String strToAdd = strLine.substring(strLine.indexOf('=') + 1, 
+													strLine.length());
 				arrayOfStrings.add(strToAdd.toUpperCase().trim());
 			}
 		}
@@ -147,13 +151,15 @@ public class LongestCommonSubsequenceTests {
 					
 					// Run the Naive Solution, if requested
 					if(runNaive)
-						compareStringsNaiveSolution(outputFile, timer, str1, str2);
+						compareStringsNaiveSolution(outputFile, timer, 
+													str1, str2);
 					
 					// Run the dynamic solution
-					compareStringsDynamicSolution(outputFile, timer, str1, str2);
+					compareStringsDynamicSolution(outputFile, timer, 
+												  str1, str2);
 					
 					FileIO.writeLineToOutputFile(outputFile, 
-							"----------------------------------------------------");
+						"----------------------------------------------------");
 					
 				}
 			}
@@ -172,48 +178,86 @@ public class LongestCommonSubsequenceTests {
 	 * @param str1 The first string to compare.
 	 * @param str2 The second string to compare.
 	 */
-	private static void compareStringsDynamicSolution(File outputFile, StopWatch timer, String firstStr, String secondStr) {
+	private static void compareStringsDynamicSolution(File outputFile, 
+						StopWatch timer, String firstStr, String secondStr) {
 		String lcsString;
 		
 		// Setup timer
-		double percentMatchStr1 = 0, percentMatchStr2 = 0;
 		timer.reset();
 		timer.start();
 		
-		// Construct a table comparing strings
-		LongestCommonSubsequence lcs = new LongestCommonSubsequence(firstStr, secondStr);
-		int [][] LCSTable = lcs.ConstructLCSTableDynamic();
-
+		// Construct a table comparing strings and counting lcs
+		LongestCommonSubsequence lcs = new LongestCommonSubsequence(firstStr, 
+																	secondStr);
+		int [][] LCSTable = lcs.FindLCSLengthDynamic();
 		timer.stop();
 	
 		// Print longest common subsequence and statistics to output file
 		int lcsLength = LCSTable[firstStr.length()][secondStr.length()];
+		printDynamicConstructTableStatistics(outputFile, timer, firstStr, 
+											 secondStr, lcsLength);
+		
+		// Reconstruct the path, creating the LCS String, 
+		// by retracing the path through the table backwards
+		timer.reset();
+		timer.start();
+		lcsString = lcs.FindLCSStringDynamic(LCSTable);
+		timer.stop();
+		
+		// Output the actual LCS string to the file
+		printDynamicFindStringStatistics(outputFile, timer, lcsString);
+	}
+
+	/***
+	 * This function prints otu statistcis related to constructing the 
+	 * table that counts the longest common subsequence between the two 
+	 * strings
+	 * 
+	 * @param outputFile The output file to write statistics to.
+	 * @param timer The timer that contains timing info for the table 
+	 * construct part of the algorithm.
+	 * @param firstStr The first string to be outputed to the file.
+	 * @param secondStr The second string to be outputed to the file
+	 * @param lcsLength The length of the longest common substring 
+	 * found in the table
+	 */
+	private static void printDynamicConstructTableStatistics(File outputFile, 
+											StopWatch timer, String firstStr,
+											String secondStr, int lcsLength) {
+		double percentMatchStr1 = 0, percentMatchStr2 = 0;
 		FileIO.writeCarriageReturnToFile(outputFile);
 		FileIO.writeLineToOutputFile(outputFile, "LCS length = " + lcsLength);
 		if(firstStr.length() > 0)  // prevent divide by zero
 			percentMatchStr1 = (double)lcsLength/(double)firstStr.length() * 100.0;
-		FileIO.writeLineToOutputFile(outputFile, String.format("Percent Match String 1 = %02f Percent", percentMatchStr1));
+		FileIO.writeLineToOutputFile(outputFile, 
+				String.format("Percent Match String 1 = %02f Percent",
+				percentMatchStr1));
 		if(secondStr.length() > 0) // prevent divide by zero
 			percentMatchStr2 = (double)lcsLength/(double)secondStr.length() * 100;
-		FileIO.writeLineToOutputFile(outputFile, String.format("Percent Match String 2 = %02f Percent", percentMatchStr2));
-		FileIO.writeLineToOutputFile(outputFile, "Dynamic Compare Running time: " + timer);
-		
-		// Reset the timer
-		timer.reset();
-		timer.start();
-		
-		// Reconstruct the path, creating the LCS String, by running through the table backwards
-		lcsString = lcs.FindLCSStringDynamic(LCSTable);
-
-		// Output the actual LCS string to the file
-		timer.stop();
-		FileIO.writeCarriageReturnToFile(outputFile);
-		FileIO.writeLineToOutputFile(outputFile, "LCS = " + lcsString);
-		FileIO.writeLineToOutputFile(outputFile, "Dynamic String Construct Running time: " + timer);
-		FileIO.writeCarriageReturnToFile(outputFile);
+		FileIO.writeLineToOutputFile(outputFile, 
+				String.format("Percent Match String 2 = %02f Percent", 
+				percentMatchStr2));
+		FileIO.writeLineToOutputFile(outputFile, 
+				"Dynamic Compare Running time: " + timer);
 	}
 	
-	
+	/**
+	 * This function prints out statistics related to finding the LCS string in the dynamic
+	 * solution
+	 * 
+	 * @param outputFile The output file to write statistics to
+	 * @param timer The timer, to output timing information
+	 * @param lcsString The longest common subsequence string that was found
+	 */
+	private static void printDynamicFindStringStatistics(File outputFile, 
+											StopWatch timer, String lcsString) {
+		
+		FileIO.writeCarriageReturnToFile(outputFile);
+		FileIO.writeLineToOutputFile(outputFile, "LCS = " + lcsString);
+		FileIO.writeLineToOutputFile(outputFile, 
+				"Dynamic String Construct Running time: " + timer);
+		FileIO.writeCarriageReturnToFile(outputFile);
+	}
 
 	/***
 	 * This function takes two strings, compares them using the naive
@@ -227,7 +271,9 @@ public class LongestCommonSubsequenceTests {
 	 * @param str1 The first string to compare.
 	 * @param str2 The second string to compare.
 	 */
-	private static void compareStringsNaiveSolution(File outputFile, StopWatch timer, String str1, String str2) {
+	private static void compareStringsNaiveSolution(File outputFile, 
+									StopWatch timer, String str1, String str2) {
+		
 		timer.reset();
 		timer.start();
 		
@@ -239,7 +285,8 @@ public class LongestCommonSubsequenceTests {
 		// print string numbers, strings, and longest common subsequence
 		FileIO.writeCarriageReturnToFile(outputFile);
 		FileIO.writeLineToOutputFile(outputFile, "LCS Length = " + lengthOfLcs);
-		FileIO.writeLineToOutputFile(outputFile, "Naive String Compare Running time: " + timer);
+		FileIO.writeLineToOutputFile(outputFile, 
+				"Naive String Compare Running time: " + timer);
 		FileIO.writeCarriageReturnToFile(outputFile);
 	}
 }
